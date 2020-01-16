@@ -1,3 +1,45 @@
+Lando Installation
+============
+
+1. Git clone this repo via ```git@github.com:thinktandem/mautic.git```
+2. Add the following to /app/config.local.php:
+
+    ```php
+    <?php
+    
+    $parameters = array(
+      "db_host"               => "database",
+      "db_port"               => 3306,
+      "db_name"               => "lamp",
+      "db_user"               => "lamp",
+      "db_password"           => "lamp",
+    );
+    
+    ```
+3. Run ```lando start```
+
+### If Migrating An Existing Mautic Installation
+
+1. Run this command first ```lando php app/console doctrine:schema:update --dump-sql```
+2. Then run your DB import: ```lando db-import YOURDB.sql```
+3. Copy the /app/config.local.php on the other installation into your lando mautic installation.
+4. Change the following keys to this:
+    
+    ```php
+      "db_host"               => "database",
+      "db_port"               => 3306,
+      "db_name"               => "lamp",
+      "db_user"               => "lamp",
+      "db_password"           => "lamp",
+      'cache_path'            => '/app/app/cache',
+      'log_path'              => '/app/app/logs',
+      'image_path'            => 'media/images',
+      'tmp_path'              => '/app/app/cache',
+      'upload_dir'            => '/app/app/../media/files',
+      'report_temp_dir'       => '/app/app/../media/files/temp',
+    ```
+
+
 Mautic Introduction
 ===========
 ![Mautic](https://www.mautic.org/media/images/github_readme.png "Mautic Open Source Marketing Automation")
