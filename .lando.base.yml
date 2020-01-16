@@ -4,11 +4,15 @@ config:
   webroot: .
   php: "7.2"
   database: mysql:5.7
+  xdebug: true
 
 services:
   appserver:
     build:
       - "cd /app && composer install"
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: "serverName=mautic.lndo.site"
 
 tooling:
   php:
