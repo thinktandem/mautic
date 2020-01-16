@@ -39,6 +39,11 @@ Lando Installation
       'report_temp_dir'       => '/app/app/../media/files/temp',
     ```
 
+### Running Tests Locally In Lando
+
+1. Run ```lndo test``` 
+
+
 
 Mautic Introduction
 ===========
