@@ -39,9 +39,15 @@ Lando Installation
       'report_temp_dir'       => '/app/app/../media/files/temp',
     ```
 
+### Running Cron Tasks Locally
+
+There are several cron tasks setup as toolings.  To run them, look at the .lando.base.yml file and pick which one you need to execute.  
+
+i.e.  ```lando campaigns-update```
+
 ### Running Tests Locally In Lando
 
-1. Run ```lndo test``` 
+Run ```lndo test``` 
 
 
 
