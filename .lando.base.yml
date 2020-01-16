@@ -11,6 +11,23 @@ services:
       - "cd /app && composer install"
 
 tooling:
+  php:
+    service: appserver
+  segment-update:
+    service: appserver
+    cmd: php /app/app/console mautic:segments:update
+  campaigns-update:
+    service: appserver
+    cmd: php /app/app/console mautic:campaigns:update
+  campaigns-trigger:
+    service: appserver
+    cmd: php /app/app/console mautic:campaigns:trigger
+  hubspot-push:
+    service: appserver
+    cmd: php /app/app/console mautic:integration:pushleadactivity --integration=Hubspot
+  hubspot-fetch:
+    service: appserver
+    cmd: php /app/app/console mautic:integration:fetchleads --integration=Hubspot
   phpunit:
     service: appserver
     cmd: /app/bin/phpunit
@@ -19,3 +36,4 @@ tooling:
     description: Run Tests Locally
     cmd:
       - appserver: composer test
+
