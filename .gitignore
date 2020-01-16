@@ -2,6 +2,7 @@
 !.gitignore
 !.htaccess
 !.gitkeep
+!.lando.base.yml
 .php_cs.cache
 /.env
 /composer.phar
@@ -94,3 +95,25 @@
 !/themes/blank-big.png
 
 /translations
+
+# Common sys files
+.*.swp
+._*
+.git
+.hg
+.sign
+.lock-wscript
+.svn
+.wafpickle-*
+.DS_Store
+.idea/
+*.tar
+*.jxp
+*.sublime-*
+
+# Logs
+*.log
+logs
+
+# SQL
+*.sql

@@ -1,0 +1,6 @@
+name: mautic
+recipe: lemp
+config:
+  webroot: .
+  php: "7.2"
+  database: mysql:5.7
